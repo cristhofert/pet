@@ -1,0 +1,7 @@
+[Activity]
+name = Pet
+activity_version = 1
+bundle_id = org.sugarlabs.Pet
+exec = sugar-activity activity.Activity -s
+icon = icon
+license = GPLv3+
