@@ -15,6 +15,10 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from gi.repository import Gtk
+from sugar3.activity import activity
+from sugar3.activity.widgets import StopButton
+from sugar3.activity.widgets import ActivityToolbarButton
+from sugar3.graphics.toolbarbox import ToolbarBox
 
 class Activity(activity.Activity):
     def __init__(self, handle):
@@ -27,10 +31,12 @@ class Activity(activity.Activity):
         toolbarbox.toolbar.insert(activity_button, 0)
 
         separator = Gtk.SeparatorToolItem()
-        activity_button.page.insert(separator, -1
+        activity_button.page.insert(separator, -1)
 
         stopbtn = StopButton(self)
         toolbarbox.toolbar.insert(stopbtn, -1)
 
         self.set_toolbar_box(toolbarbox)
+        pet = game.Pet()
+        self.set_canvas(snake)
         self.show_all()
