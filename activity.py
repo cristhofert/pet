@@ -14,6 +14,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+import game
+
 from gi.repository import Gtk
 from sugar3.activity import activity
 from sugar3.activity.widgets import StopButton
@@ -37,6 +39,5 @@ class Activity(activity.Activity):
         toolbarbox.toolbar.insert(stopbtn, -1)
 
         self.set_toolbar_box(toolbarbox)
-        pet = game.Pet()
-        self.set_canvas(snake)
+        self.set_canvas(game.Game())
         self.show_all()

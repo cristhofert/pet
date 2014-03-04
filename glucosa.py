@@ -62,11 +62,7 @@ def load_surface(path):
         raise Exception("File not found: %s" % (path))
 
     # TODO: no asumir que siempre que cargan PNGs.
-    try:
-        return cairo.ImageSurface.create_from_png(path)
-    except:
-        return cairo.ImageSurface.create_from_svg(path)
-
+    return cairo.ImageSurface.create_from_png(path)
 
 def render_text(context, x, y, text, color, size, face):
     """Dibuja una cadena de texto sobre el contexto de canvas."""
