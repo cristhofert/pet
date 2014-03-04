@@ -16,11 +16,11 @@
 
 import game
 
-from gi.repository import Gtk
-from sugar3.activity import activity
-from sugar3.activity.widgets import StopButton
-from sugar3.activity.widgets import ActivityToolbarButton
-from sugar3.graphics.toolbarbox import ToolbarBox
+import gtk
+from sugar.activity import activity
+from sugar.activity.widgets import StopButton
+from sugar.activity.widgets import ActivityToolbarButton
+from sugar.graphics.toolbarbox import ToolbarBox
 
 class Activity(activity.Activity):
     def __init__(self, handle):
@@ -32,7 +32,7 @@ class Activity(activity.Activity):
         activity_button = ActivityToolbarButton(self)
         toolbarbox.toolbar.insert(activity_button, 0)
 
-        separator = Gtk.SeparatorToolItem()
+        separator = gtk.SeparatorToolItem()
         activity_button.page.insert(separator, -1)
 
         stopbtn = StopButton(self)
