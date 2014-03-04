@@ -13,7 +13,7 @@ class Game(glucosa.GameArea):
         _events = glucosa.Events(self)
         _pet = Pet()
         mouth = Mouth()
-        banana = Food('banana.png')
+        banana = Food('banana.png', 0, 0)
         
         self.connect('draw', _pet._update)
         self.connect('draw', mouth._update)
@@ -55,9 +55,9 @@ class Mouth(glucosa.Sprite):
             self.set_image(self._image)
     
 class Food(glucosa.Sprite):
-    def __init__(self, image):
-        _image = glucosa.Image(image)
-        glucosa.Sprite.__init__(self, _image, 400, 100)
+    def __init__(self, image, _x, _y):
+        _image = glucosa.Image('images/' + image)
+        glucosa.Sprite.__init__(self, _image, _x, _y)
 
         self._to_rotate = 0
 
@@ -69,7 +69,7 @@ class Food(glucosa.Sprite):
         tb = data['y'] > self.get_top() and data['y'] < self.get_bottom() + 100
         a = lr and tb
         if a:
-            self.set_scale(2)
+            self.set_scale(1.1)
         else:
             self.set_scale(1)
 
