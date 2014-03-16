@@ -393,6 +393,8 @@ class Sprite(gobject.GObject):
 
     top = property(get_top, set_top, doc="Define la posición superior del Sprite")
     bottom = property(get_bottom, set_bottom, doc="Define la posición inferior del Sprite")
+
+
     
     
 class Text:
